@@ -1,16 +1,15 @@
-import "./signupForm.style.css";
 import React, { useState } from "react";
+import "./signupdemo.style.css";
 
-function SignupForm() {
+function Signupdemo() {
   const defaultValue = {
     fullName: "",
     dateofBirth: "",
     password: "",
     confirmPassword: "",
   };
-
   const [value, setValue] = useState(defaultValue);
-  const [isClicked, setisClicked] = useState(false);
+  const [clicked, setisClicked] = useState(false);
 
   const onChangeHandler = (e) => {
     setValue({ ...value, [e.target.name]: e.target.value });
@@ -25,8 +24,8 @@ function SignupForm() {
   return (
     <>
       <form className="form-container" onSubmit={onSubmitHandler}>
-        <h1>Signup Form</h1>
-        <label forHtml="FirstName">Full Name</label>
+        <h1>Sign up form</h1>
+        <label htmlFor="name">Full Name</label>
         <input
           type="text"
           value={value.fullName}
@@ -35,7 +34,8 @@ function SignupForm() {
           onChange={onChangeHandler}
           required
         />
-        <label forHtml="FirstName">Date of birth</label>
+
+        <label htmlFor="name">Date of birth</label>
         <input
           type="date"
           value={value.dateofBirth}
@@ -44,7 +44,8 @@ function SignupForm() {
           onChange={onChangeHandler}
           required
         />
-        <label forHtml="FirstName">Password</label>
+
+        <label htmlFor="name">Password</label>
         <input
           type="password"
           value={value.password}
@@ -53,25 +54,24 @@ function SignupForm() {
           onChange={onChangeHandler}
           required
         />
-        <label forHtml="FirstName">Confirm Password</label>
+
+        <label htmlFor="name">Confirm password</label>
         <input
           type="password"
           value={value.confirmPassword}
           name="confirmPassword"
-          placeholder="Confirm password"
+          placeholder="Confirm Password"
           onChange={onChangeHandler}
           required
         />
         <button type="submit">Submit</button>
-        {isClicked === true && <p>Name: {value.fullName} </p>}
-        {isClicked === true && <p>Date of Birth: {value.dateofBirth} </p>}
-        {isClicked === true && <p>Password: {value.password} </p>}
-        {isClicked === true && (
-          <p>Confirm password: {value.confirmPassword} </p>
-        )}
+        {clicked === true && <p>Name: {value.fullName}</p>}
+        {clicked === true && <p>Date of Birth: {value.dateofBirth}</p>}
+        {clicked === true && <p>Password: {value.password}</p>}
+        {clicked === true && <p>Confirm password: {value.confirmPassword}</p>}
       </form>
     </>
   );
 }
 
-export default SignupForm;
+export default Signupdemo;
