@@ -8,8 +8,9 @@ function Signupdemo() {
     password: "",
     confirmPassword: "",
   };
+
   const [value, setValue] = useState(defaultValue);
-  const [clicked, setisClicked] = useState(false);
+  const [isClicked, setisClicked] = useState(false);
 
   const onChangeHandler = (e) => {
     setValue({ ...value, [e.target.name]: e.target.value });
@@ -24,18 +25,17 @@ function Signupdemo() {
   return (
     <>
       <form className="form-container" onSubmit={onSubmitHandler}>
-        <h1>Sign up form</h1>
-        <label htmlFor="name">Full Name</label>
+        <h1>Sign up Form</h1>
+        <label htmlFor="Full name">Full Name</label>
         <input
           type="text"
           value={value.fullName}
           name="fullName"
-          placeholder="Full Name"
+          placeholder="Full name"
           onChange={onChangeHandler}
           required
         />
-
-        <label htmlFor="name">Date of birth</label>
+        <label htmlFor="Date of birth">Date of Birth</label>
         <input
           type="date"
           value={value.dateofBirth}
@@ -44,8 +44,7 @@ function Signupdemo() {
           onChange={onChangeHandler}
           required
         />
-
-        <label htmlFor="name">Password</label>
+        <label htmlFor="password">Password</label>
         <input
           type="password"
           value={value.password}
@@ -54,21 +53,20 @@ function Signupdemo() {
           onChange={onChangeHandler}
           required
         />
-
-        <label htmlFor="name">Confirm password</label>
+        <label htmlFor="confirm password">Confirm Password</label>
         <input
           type="password"
           value={value.confirmPassword}
           name="confirmPassword"
-          placeholder="Confirm Password"
+          placeholder="Confirm password"
           onChange={onChangeHandler}
           required
         />
         <button type="submit">Submit</button>
-        {clicked === true && <p>Name: {value.fullName}</p>}
-        {clicked === true && <p>Date of Birth: {value.dateofBirth}</p>}
-        {clicked === true && <p>Password: {value.password}</p>}
-        {clicked === true && <p>Confirm password: {value.confirmPassword}</p>}
+        {isClicked === true && <p>Name: {value.fullName}</p>}
+        {isClicked === true && <p>Date of Birth: {value.dateofBirth}</p>}
+        {isClicked === true && <p>Password: {value.password}</p>}
+        {isClicked === true && <p>Confirm Password: {value.confirmPassword}</p>}
       </form>
     </>
   );
