@@ -16,10 +16,13 @@ const Counter = () => {
 
   return (
     <>
-      <button onClick={incrementNumber}>+10</button>
-      <h1> {counter} </h1>
-      <button onClick={decrementNumber}>-10</button>
-      {counter === 100 && <h2>You reach max number</h2>}
+      <h1>Counter game</h1>
+      <div className="counter-box">
+        <button onClick={incrementNumber}>+10</button>
+        <h1> {counter} </h1>
+        <button onClick={decrementNumber}>-10</button>
+        {counter === 100 && <h2>You reach max number!</h2>}
+      </div>
     </>
   );
 };
