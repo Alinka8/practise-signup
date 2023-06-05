@@ -5,8 +5,8 @@ import Signupdemo from "./sign-up form demo/Signupdemo";
 function App() {
   return (
     <div className="App">
-      {/* <Signupdemo/> */}
-      <Counter />
+      <Signupdemo />
+      {/* <Counter /> */}
     </div>
   );
 }
